@@ -90,6 +90,7 @@ body {
     transition: var(--transition-base);
     position: relative;
     overflow: hidden;
+    padding-right:40px;
 }
 
 .mobile-menu-toggle::before {
