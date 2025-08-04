@@ -164,7 +164,7 @@ function clearContainerCalculations() {
     
     containerInputs.forEach((input, index) => {
         input.value = '';
-        input.placeholder = `Container ${index + 1}`;
+        // input.placeholder = `Container ${index + 1}`;
     });
 }
 
