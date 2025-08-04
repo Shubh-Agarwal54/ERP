@@ -1595,7 +1595,7 @@ textarea:focus {
     color: white;
     padding: 1px 4px;
     border-radius: 2px;
-    font-size: 8px;
+    font-size: 12px;
     display: flex;
     align-items: center;
     gap: 2px;
@@ -1605,7 +1605,7 @@ textarea:focus {
 
 .tag .remove-tag {
     cursor: pointer;
-    font-size: 7px;
+    font-size: 12px;
     opacity: 0.8;
 }
 
