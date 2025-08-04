@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP System - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar will be loaded here by navbar.js -->
+
+    <div class="main-container">
+        <!-- Mobile Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        
+        <!-- Sidebar (Mobile Only) -->                              
+        <aside class="sidebar mobile-only" id="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Orders</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-box"></i>
+                        <span>Products/Services</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-users"></i>
+                        <span>Customers</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-warehouse"></i>
+                        <span>Sampling</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Sales Manager</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>CRM</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Order Sheet</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Pricing</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-truck"></i>
+                        <span>Dispatch</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-industry"></i>
+                        <span>Production</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-file-invoice"></i>
+                        <span>Billing</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Report/Analysis</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Accounts</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content desktop-full-width">
+            <div class="content-header">
+                <h3>Dashboard</h3>
+                <div class="breadcrumb">
+                    <div class="breadcrumb-nav">
+                        <span>Home</span>
+                        <i class="fas fa-chevron-right"></i>
+                        <span>Dashboard</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Stats Cards -->
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>1,247</h3>
+                        <p>Total Orders</p>
+                        <span class="stat-change positive">+12%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>342</h3>
+                        <p>Customers</p>
+                        <span class="stat-change positive">+8%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>₹2,45,670</h3>
+                        <p>Revenue</p>
+                        <span class="stat-change positive">+15%</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>156</h3>
+                        <p>Products</p>
+                        <span class="stat-change negative">-3%</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Content Grid -->
+            <div class="dashboard-grid">
+                <!-- Recent Orders -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h4>Recent Orders</h4>
+                        <a href="orders.html" class="view-all">View All</a>
+                    </div>
+                    <div class="card-content">
+                        <div class="order-item">
+                            <div class="order-info">
+                                <span class="order-id">#1247</span>
+                                <span class="order-customer">ABC Corp</span>
+                            </div>
+                            <div class="order-status">
+                                <span class="status processing">Processing</span>
+                                <span class="order-amount">₹12,450</span>
+                            </div>
+                        </div>
+                        <div class="order-item">
+                            <div class="order-info">
+                                <span class="order-id">#1246</span>
+                                <span class="order-customer">XYZ Ltd</span>
+                            </div>
+                            <div class="order-status">
+                                <span class="status completed">Completed</span>
+                                <span class="order-amount">₹8,250</span>
+                            </div>
+                        </div>
+                        <div class="order-item">
+                            <div class="order-info">
+                                <span class="order-id">#1245</span>
+                                <span class="order-customer">PQR Industries</span>
+                            </div>
+                            <div class="order-status">
+                                <span class="status pending">Pending</span>
+                                <span class="order-amount">₹15,600</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sales Chart -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h4>Sales Overview</h4>
+                        <select class="period-selector">
+                            <option>This Month</option>
+                            <option>Last Month</option>
+                            <option>This Quarter</option>
+                        </select>
+                    </div>
+                    <div class="card-content">
+                        <div class="chart-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                            <p>Sales chart visualization would go here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h4>Quick Actions</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="quick-actions">
+                            <a href="index.html" class="quick-action">
+                                <i class="fas fa-plus"></i>
+                                <span>Create Order</span>
+                            </a>
+                            <a href="customers.html" class="quick-action">
+                                <i class="fas fa-user-plus"></i>
+                                <span>Add Customer</span>
+                            </a>
+                            <a href="products.html" class="quick-action">
+                                <i class="fas fa-box"></i>
+                                <span>Add Product</span>
+                            </a>
+                            <a href="reports.html" class="quick-action">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>View Reports</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inventory Status -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h4>Inventory Status</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="inventory-item">
+                            <span class="product-name">Cotton Fabric</span>
+                            <div class="stock-bar">
+                                <div class="stock-fill" style="width: 75%"></div>
+                            </div>
+                            <span class="stock-text">75%</span>
+                        </div>
+                        <div class="inventory-item">
+                            <span class="product-name">Silk Material</span>
+                            <div class="stock-bar">
+                                <div class="stock-fill low" style="width: 25%"></div>
+                            </div>
+                            <span class="stock-text">25%</span>
+                        </div>
+                        <div class="inventory-item">
+                            <span class="product-name">Polyester</span>
+                            <div class="stock-bar">
+                                <div class="stock-fill" style="width: 90%"></div>
+                            </div>
+                            <span class="stock-text">90%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="copyright">
+                <i class="far fa-copyright"></i>
+                <span>2025 ERP Daddy. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="navbar.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

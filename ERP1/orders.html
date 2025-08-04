@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP System - Orders</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar will be loaded here by navbar.js -->
+
+    <div class="main-container">
+        <!-- Mobile Overlay -->
+        <div class="mobile-overlay" id="mobileOverlay"></div>
+        
+        <!-- Sidebar (Mobile Only) -->                              
+        <aside class="sidebar mobile-only" id="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="nav-item active">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Orders</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-box"></i>
+                        <span>Products/Services</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-users"></i>
+                        <span>Customers</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-warehouse"></i>
+                        <span>Sampling</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Sales Manager</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>CRM</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-clipboard-list"></i>
+                        <span>Order Sheet</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <span>Pricing</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-truck"></i>
+                        <span>Dispatch</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-industry"></i>
+                        <span>Production</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-file-invoice"></i>
+                        <span>Billing</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Report/Analysis</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Accounts</span>
+                    </li>
+                    <li class="nav-item">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content desktop-full-width">
+            <div class="content-header">
+                <h3>Orders Management</h3>
+                <div class="breadcrumb">
+                    <div class="breadcrumb-nav">
+                        <span>Orders</span>
+                    </div>
+                    <div class="breadcrumb-buttons">
+                        <a href="index.html" class="btn-save">Create New Order</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Filter Section -->
+            <div class="filter-section">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label>Status</label>
+                        <select class="form-control">
+                            <option value="">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="processing">Processing</option>
+                            <option value="completed">Completed</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Date Range</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="filter-group">
+                        <label>Customer</label>
+                        <select class="form-control">
+                            <option value="">All Customers</option>
+                            <option value="abc">ABC Corp</option>
+                            <option value="xyz">XYZ Ltd</option>
+                            <option value="pqr">PQR Industries</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Search</label>
+                        <input type="text" class="form-control" placeholder="Order ID or Customer">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders Table -->
+            <div class="table-section">
+                <div class="table-container">
+                    <table class="order-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Order Date</th>
+                                <th>Status</th>
+                                <th>Items</th>
+                                <th>Total Amount</th>
+                                <th>Delivery Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#1247</td>
+                                <td>ABC Corp</td>
+                                <td>30/01/2025</td>
+                                <td><span class="status processing">Processing</span></td>
+                                <td>5</td>
+                                <td>₹12,450</td>
+                                <td>05/02/2025</td>
+                                <td class="action-cell">
+                                    <button class="btn-edit" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-view" title="View"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-delete" title="Delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1246</td>
+                                <td>XYZ Ltd</td>
+                                <td>29/01/2025</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td>3</td>
+                                <td>₹8,250</td>
+                                <td>03/02/2025</td>
+                                <td class="action-cell">
+                                    <button class="btn-edit" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-view" title="View"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-delete" title="Delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1245</td>
+                                <td>PQR Industries</td>
+                                <td>28/01/2025</td>
+                                <td><span class="status pending">Pending</span></td>
+                                <td>7</td>
+                                <td>₹15,600</td>
+                                <td>08/02/2025</td>
+                                <td class="action-cell">
+                                    <button class="btn-edit" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-view" title="View"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-delete" title="Delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1244</td>
+                                <td>DEF Company</td>
+                                <td>27/01/2025</td>
+                                <td><span class="status cancelled">Cancelled</span></td>
+                                <td>2</td>
+                                <td>₹5,200</td>
+                                <td>01/02/2025</td>
+                                <td class="action-cell">
+                                    <button class="btn-edit" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-view" title="View"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-delete" title="Delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>#1243</td>
+                                <td>GHI Enterprises</td>
+                                <td>26/01/2025</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td>4</td>
+                                <td>₹9,800</td>
+                                <td>31/01/2025</td>
+                                <td class="action-cell">
+                                    <button class="btn-edit" title="Edit"><i class="fas fa-edit"></i></button>
+                                    <button class="btn-view" title="View"><i class="fas fa-eye"></i></button>
+                                    <button class="btn-delete" title="Delete"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-section">
+                <div class="pagination-info">
+                    Showing 1-5 of 247 orders
+                </div>
+                <div class="pagination-controls">
+                    <button class="btn-pagination" disabled>Previous</button>
+                    <button class="btn-pagination active">1</button>
+                    <button class="btn-pagination">2</button>
+                    <button class="btn-pagination">3</button>
+                    <button class="btn-pagination">Next</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="copyright">
+                <i class="far fa-copyright"></i>
+                <span>2025 ERP Daddy. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="navbar.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
