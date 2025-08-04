@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERPDADDY - Product Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">
+                
+                <div class="logo-main"><img id="logo-img" src="images/ERP (2).png" alt=""></div>
+                <!-- <div class="logo-sub">DADDY</div> -->
+            </div>
+            <button class="menu-btn">Menus</button>
+        </div>
+        <div class="header-right">
+            <div class="time">03:08:45 PM</div>
+            <div class="header-icons">
+                <i class="fas fa-comments"></i>
+                <i class="fas fa-bell"></i>
+                <div class="user-info">
+                    <i class="fas fa-user"></i>
+                    <span>User</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Left and Center Content -->
+        <div class="content-left">
+            <!-- Category Detail Section -->
+            <div class="form-section">
+                <h3 class="section-title">Category Detail  <span class="section-title-right">P.Code: </span></h3>
+                <div class="form-grid">
+                    <div class="form-group asterisk">
+                        <label>Bom Type</label>
+                        <div class="input-with-btn">
+                            <div class="searchable-dropdown-container" data-required="true" id="bom-type-dropdown">
+                                <input type="text" class="searchable-dropdown-input" placeholder="Select BOM Type" readonly>
+                                <i class="fas fa-chevron-down searchable-dropdown-arrow"></i>
+                                <div class="searchable-dropdown-list">
+                                    <div class="searchable-dropdown-item" data-value="Rs">Regular Showroom</div>
+                                    <div class="searchable-dropdown-item" data-value="Bp">Buyer Prd</div>
+                                    <div class="searchable-dropdown-item" data-value="ss">Sample Showroom</div>
+                                    <!-- <div class="searchable-dropdown-item" data-value="standard">Standard BOM</div> -->
+                                    <!-- <div class="searchable-dropdown-item" data-value="custom">Custom BOM</div>
+                                    <div class="searchable-dropdown-item" data-value="assembly">Assembly BOM</div>
+                                    <div class="searchable-dropdown-item" data-value="component">Component BOM</div>
+                                    <div class="searchable-dropdown-item" data-value="manufacturing">Manufacturing BOM</div>
+                                    <div class="searchable-dropdown-item" data-value="planning">Planning BOM</div> -->
+                                </div>
+                            </div>
+                            <button class="add-btn"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Buyer Fields - Hidden by default, shown when Buyer Prd is selected -->
+                    <div class="form-group buyer-fields asterisk" id="buyer-name-field" style="display: none;">
+                        <label>Buyer Name</label>
+                        <div class="input-with-btn">
+                            <div class="searchable-dropdown-container" data-required="true">
+                                <input type="text" class="searchable-dropdown-input" placeholder="Select Buyer Name" readonly>
+                                <i class="fas fa-chevron-down searchable-dropdown-arrow"></i>
+                                <div class="searchable-dropdown-list">
+                                    <div class="searchable-dropdown-item" data-value="abhay-gupta">Abhay Gupta 09</div>
+                                    <div class="searchable-dropdown-item" data-value="agrosh">Agrosh</div>
+                                    <div class="searchable-dropdown-item" data-value="ak">Ak</div>
+                                    <div class="searchable-dropdown-item" data-value="ak-enterprise">AK ENTERPRISE</div>
+                                    <div class="searchable-dropdown-item" data-value="ak-enterprise-35">AK Enterprise 35</div>
+                                    <div class="searchable-dropdown-item" data-value="akash">Akash</div>
+                                    <div class="searchable-dropdown-item" data-value="akshi">akshi</div>
+                                    <div class="searchable-dropdown-item" data-value="ambika-enterprise">Ambika Enterprise</div>
+                                    <div class="searchable-dropdown-item" data-value="amit">Amit</div>
+                                    <div class="searchable-dropdown-item" data-value="amitss">Amitss</div>
+                                    <div class="searchable-dropdown-item" data-value="andhres">andhres</div>
+                                    <div class="searchable-dropdown-item" data-value="anque">Anque</div>
+                                    <div class="searchable-dropdown-item" data-value="anup">Anup</div>
+                                    <div class="searchable-dropdown-item" data-value="anurag">Anurag</div>
+                                    <div class="searchable-dropdown-item" data-value="bfhb">bfhb</div>
+                                </div>
+                            </div>
+                            <button class="add-btn"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group buyer-fields" id="buyer-sku-field" style="display: none;">
+                        <label  >Buyer SKU</label>
+                        <input type="text" placeholder="Enter Buyer SKU">
+                    </div>
+                    
+                    <!-- Only For Buyer Checkbox - Hidden by default, shown when Buyer Prd is selected -->
+                    <div class="form-group buyer-fields" id="only-for-buyer-field" style="display: none;">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="only-for-buyer">
+                            <label for="only-for-buyer">Only For Buyer</label>
+                        </div>
+                    </div>
+                    <div class="form-group asterisk category-field">
+                        <label>Category</label>
+                        <div class="input-with-btn">
+                            <div class="searchable-dropdown-container" data-required="true">
+                                <input type="text" class="searchable-dropdown-input" placeholder="Select Category" readonly>
+                                <i class="fas fa-chevron-down searchable-dropdown-arrow"></i>
+                                <div class="searchable-dropdown-list">
+                                    <div class="searchable-dropdown-item" data-value="bath-accessories">BATH ACCESSORIES</div>
+                                    <div class="searchable-dropdown-item" data-value="assent-furniture">ASSENT FURNITURE</div>
+                                    <div class="searchable-dropdown-item" data-value="bath-furniture">BATH FURNITURE</div>
+                                    <div class="searchable-dropdown-item" data-value="bedrooms">BEDROOMS</div>
+                                    <div class="searchable-dropdown-item" data-value="computer-table">COMPUTER TABLE</div>
+                                    <div class="searchable-dropdown-item" data-value="dec-basket">DEC BASKET</div>
+                                    <div class="searchable-dropdown-item" data-value="kitchen-accessories">KITCHEN ACCESSORIES</div>
+                                    <div class="searchable-dropdown-item" data-value="living-room">LIVING ROOM</div>
+                                </div>
+                            </div>
+                            <button class="add-btn"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-group asterisk">
+                        <label>Product Type</label>
+                        <div class="input-with-btn">
+                            <div class="searchable-dropdown-container" data-required="true">
+                                <input type="text" class="searchable-dropdown-input" placeholder="Select Product Type" readonly>
+                                <i class="fas fa-chevron-down searchable-dropdown-arrow"></i>
+                                <div class="searchable-dropdown-list">
+                                    <div class="searchable-dropdown-item" data-value="almirah-iron">ALMIRAH IRON</div>
+                                    <div class="searchable-dropdown-item" data-value="mirror-frame">MIRROR FRAME</div>
+                                    <div class="searchable-dropdown-item" data-value="soap-dispenser">SOAP DISPENSER</div>
+                                    <div class="searchable-dropdown-item" data-value="cabinet">CABINET</div>
+                                    <div class="searchable-dropdown-item" data-value="shelf">SHELF</div>
+                                    <div class="searchable-dropdown-item" data-value="towel-rack">TOWEL RACK</div>
+                                    <div class="searchable-dropdown-item" data-value="storage-box">STORAGE BOX</div>
+                                </div>
+                            </div>
+                            <button class="add-btn"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-group asterisk">
+                        <label>Set Status</label>
+                        <select required id="set-status-dropdown">
+                            <option value="">Select Status</option>
+                            <option value="single">Single</option>
+                            <option value="set">Set</option>
+                        </select>
+                    </div>
+                    <div class="form-group asterisk">
+                        <label>Part Type</label>
+                        <select required id="part-type-dropdown">
+                            <option value="">Select Part Type</option>
+                            <option value="component">Component</option>
+                            <option value="assembly">Assembly</option>
+                            <option value="sub-assembly">Sub Assembly</option>
+                            <option value="raw-material">Raw Material</option>
+                            <option value="finished-goods">Finished Goods</option>
+                            <option value="hardware">Hardware</option>
+                            <option value="accessory">Accessory</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>P Status</label>
+                        <div class="input-with-btn">
+                            <select>
+                                <option value="">Select Status</option>
+                                <option value="new">New</option>
+                                <option value="old">Exist</option>
+                            </select>
+                            <button class="search-btn">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Detail Section -->
+            <div class="form-section">
+                <h3 class="section-title">Product Detail</h3>
+                <div class="form-grid">
+                    <div class="form-group asterisk">
+                        <label>Product Name</label>
+                        <input type="text" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Prev Alias Code</label>
+                        <input style="background-color: rgba(128, 128, 128, 0.24);" type="text" value="7458thirth" disabled>
+                    </div>
+                    <div class="form-group asterisk">
+                        <label>Alias P.Code</label>
+                        <input type="text" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label>MOQ</label>
+                        <input type="text" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>HS Code</label>
+                        <input type="text" value="">
+                    </div>
+                    <div class="form-group asterisk">
+                        <label>Color</label>
+                        <div class="input-with-btn">
+                            <select required>
+                                <option value="">Select Color</option>
+                                <option value="brown">Brown</option>
+                                <option value="white">White</option>
+                                <option value="black">Black</option>
+                            </select>
+                            <button class="add-btn"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <label>Custom Description</label>
+                        <input placeholder="Enter product description..." />
+                    </div>
+                    <div class="form-group">
+                        <label>Product Designer</label>
+                        <div class="input-with-btn">
+                            <div class="searchable-dropdown-container">
+                                <input type="text" class="searchable-dropdown-input" placeholder="Select Designer" readonly>
+                                <i class="fas fa-chevron-down searchable-dropdown-arrow"></i>
+                                <div class="searchable-dropdown-list">
+                                    <div class="searchable-dropdown-item" data-value="admin-sing">ADMIN SING</div>
+                                    <div class="searchable-dropdown-item" data-value="john-doe">JOHN DOE</div>
+                                    <div class="searchable-dropdown-item" data-value="jane-smith">JANE SMITH</div>
+                                    <div class="searchable-dropdown-item" data-value="mike-wilson">MIKE WILSON</div>
+                                    <div class="searchable-dropdown-item" data-value="sarah-johnson">SARAH JOHNSON</div>
+                                    <div class="searchable-dropdown-item" data-value="david-brown">DAVID BROWN</div>
+                                    <div class="searchable-dropdown-item" data-value="lisa-davis">LISA DAVIS</div>
+                                </div>
+                            </div>
+                            <button class="add-btn"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-group asterisk">
+                        <label>Virtual/Actual</label>
+                        <select required>
+                            <option value="">Select Type</option>
+                            <option value="actual">Actual</option>
+                            <option value="virtual">Virtual</option>
+                        </select>
+                    </div>
+                    <div class="form-group asterisk">
+                        <label>Hardware Bom</label>
+                        <select required>
+                            <option value="">Select Option</option>
+                            <option value="no">No</option>
+                            <option value="yes">Yes</option>
+                        </select>
+                    </div>
+                    <div class="form-group asterisk">
+                        <label>Group/Collection</label>
+                        <div class="input-with-btn">
+                            <select required>
+                                <option value="">Select Group</option>
+                                <option value="bathroom-collection">Bathroom Collection</option>
+                                <option value="kitchen-series">Kitchen Series</option>
+                                <option value="bedroom-furniture">Bedroom Furniture</option>
+                                <option value="living-room-set">Living Room Set</option>
+                                <option value="office-furniture">Office Furniture</option>
+                                <option value="outdoor-collection">Outdoor Collection</option>
+                                <option value="antique-series">Antique Series</option>
+                                <option value="modern-line">Modern Line</option>
+                            </select>
+                            <button class="add-btn"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                    <div class="form-group  full-width">
+                        <label>Finish</label>
+                        <div class="multi-select-container">
+                            <div class="multi-select-input">
+                                <div class="selected-tags">
+                                </div>
+                                <input type="text" class="multi-select-input-field" placeholder="Add finish...">
+                            </div>
+                            <div class="multi-select-dropdown" style="display: none;">
+                                <div class="multi-select-search">
+                                    <input type="text" placeholder="Search finish..." class="search-input">
+                                </div>
+                                <div class="multi-select-options">
+                                    <div class="option" data-value="antique">Antique</div>
+                                    <div class="option" data-value="modern">Modern</div>
+                                    <div class="option" data-value="vintage">Vintage</div>
+                                    <div class="option" data-value="classic">Classic</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Material Description</label>
+                        <input type="text" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Technical Name</label>
+                        <input type="text" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Buyers</label>
+                        <div class="multi-select-container">
+                            <div class="multi-select-input">
+                                <div class="selected-tags">
+                                </div>
+                                <input type="text" class="multi-select-input-field" placeholder="Add buyers...">
+                            </div>
+                            <div class="multi-select-dropdown" style="display: none;">
+                                <div class="multi-select-search">
+                                    <input type="text" placeholder="Search buyers..." class="search-input">
+                                </div>
+                                <div class="multi-select-options">
+                                    <div class="option" data-value="john-exports">JOHN EXPORTS HOUSE</div>
+                                    <div class="option" data-value="himanshu26">Himanshu26</div>
+                                    <div class="option" data-value="global-trade">Global Trade Co</div>
+                                    <div class="option" data-value="export-plus">Export Plus Ltd</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Material</label>
+                        <div class="multi-select-container">
+                            <div class="multi-select-input">
+                                <div class="selected-tags">
+                                </div>
+                                <input type="text" class="multi-select-input-field" placeholder="Add materials...">
+                            </div>
+                            <div class="multi-select-dropdown" style="display: none;">
+                                <div class="multi-select-search">
+                                    <input type="text" placeholder="Search materials..." class="search-input">
+                                </div>
+                                <div class="multi-select-options">
+                                    <div class="option" data-value="flat-patti">FLAT PATTI 40X5</div>
+                                    <div class="option" data-value="leather-handle-25">LEATHER HANDLE 1.5"X25"</div>
+                                    <div class="option" data-value="leather-handle-31">LEATHER HANDLE 1.5"X31"</div>
+                                    <div class="option" data-value="wood-panel">Wood Panel</div>
+                                    <div class="option" data-value="metal-hinge">Metal Hinge</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Suitable for</label>
+                        <div class="multi-select-container">
+                            <div class="multi-select-input">
+                                <div class="selected-tags">
+                                </div>
+                                <input type="text" class="multi-select-input-field" placeholder="Add suitable for...">
+                            </div>
+                            <div class="multi-select-dropdown" style="display: none;">
+                                <div class="multi-select-search">
+                                    <input type="text" placeholder="Search suitable for..." class="search-input">
+                                </div>
+                                <div class="multi-select-options">
+                                    <div class="option" data-value="antique">ANTIQUE</div>
+                                    <div class="option" data-value="modern">Modern</div>
+                                    <div class="option" data-value="vintage">Vintage</div>
+                                    <div class="option" data-value="classic">Classic</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Dimension Section -->
+            <div class="form-section">
+                <h3 class="section-title">Product Dimension</h3>
+                <div class="dimension-grid">
+                    <div class="form-group">
+                        <label>Dimension</label>
+                        <select>
+                            <option value="">Select Unit</option>
+                            <option value="cbm">CBM</option>
+                            <option value="cft">CFT</option>
+                            <option value="cubic-meter">Cubic Meter</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Size Unit</label>
+                        <select>
+                            <option value="">Select Unit</option>
+                            <option value="inch">inch</option>
+                            <option value="cm">cm</option>
+                            <option value="mm">mm</option>
+                            <option value="feet">feet</option>
+                        </select>
+                    </div>
+                    <div class="form-group asterisk">
+                        <label>Length</label>
+                        <input type="number" value="" required>
+                    </div>
+                    <div class="form-group asterisk">
+                        <label>Width</label>
+                        <input type="number" value="" required>
+                    </div>
+                    <div class="form-group asterisk">
+                        <label>Height</label>
+                        <input type="number" value="" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Product CBM</label>
+                        <input style="background-color: rgba(128, 128, 128, 0.24);" type="text" value="" readonly disabled>
+                    </div>
+                    <div class="form-group">
+                        <button class="cm-wgt-btn">CM. WGT.</button>
+                    </div>
+                    <div class="form-group">
+                        <label>Net Wt(Kg.)</label>
+                        <input type="number" value="" id="net-weight-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Box G Wt(Kg.)</label>
+                        <input type="number" value="" step="0.1" id="box-gross-weight-input" style="background-color: rgba(128, 128, 128, 0.24);" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Gross Wt(Kg.)</label>
+                        <input type="number" value="" id="gross-weight-input">
+                    </div>
+                    <div class="form-group">
+                        <label>Packaging T</label>
+                        <select>
+                            <option value="">Select Type</option>
+                            <option value="normal">Normal</option>
+                            <option value="fragile">Fragile</option>
+                            <option value="heavy-duty">Heavy Duty</option>
+                            <option value="waterproof">Waterproof</option>
+                            <option value="vacuum">Vacuum</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Pack Type</label>
+                        <select>
+                            <option value="">Select Type</option>
+                            <option value="box">Box</option>
+                            <option value="carton">Carton</option>
+                            <option value="crate">Crate</option>
+                            <option value="pallet">Pallet</option>
+                            <option value="shrink-wrap">Shrink Wrap</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="add-box-btn" id="add-box-btn">+ Box</button>
+                
+                <!-- Box/Carton Details Container - Hidden by default, shown when + Box is clicked -->
+                <div class="box-details-container" id="box-details-container" style="display: none; margin-top: 20px;">
+                    <!-- Box rows will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- Other Detail Section -->
+            <div class="form-section">
+                <h3 class="section-title">Other Detail</h3>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="other-detail">
+                    <label for="other-detail">Other Detail</label>
+                </div>
+                
+                <!-- Other Detail Fields - Hidden by default, shown when checkbox is checked -->
+                <div class="other-detail-fields" id="other-detail-fields" style="display: none; overflow: hidden;">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Glass</label>
+                            <select>
+                                
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Storage</label>
+                            <select>
+                                
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Shelve</label>
+                            <select id="shelve-dropdown">
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="shelve-no-field" style="display: none;">
+                            <label>Shelve No.</label>
+                            <input type="text" placeholder="Enter shelve number">
+                        </div>
+                        <div class="form-group">
+                            <label>Mattress</label>
+                            <select id="mattress-dropdown">
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="mattress-no-field" style="display: none;">
+                            <label>Mattress No.</label>
+                            <input type="text" placeholder="Enter mattress number">
+                        </div>
+                        <div class="form-group">
+                            <label>Collection</label>
+                            <input type="text" placeholder="Enter collection">
+                        </div>
+                        <div class="form-group">
+                            <label>No of Door</label>
+                            <input type="number" placeholder="Enter number of doors">
+                        </div>
+                        <div class="form-group">
+                            <label>AI</label>
+                            <select>
+                                
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Anti Tip kit</label>
+                            <select>
+                                
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Stone</label>
+                            <select>
+                                
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Vriksha Req</label>
+                            <select id="vriksha-req-dropdown">
+                                <option value="">Select Option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Sheesham Weight</label>
+                            <input type="number" id="sheesham-weight-input" placeholder="Enter weight" step="0.1" disabled style="background-color: rgba(128, 128, 128, 0.24);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="sidebar">
+            <!-- P.Code and Image Upload -->
+            <div class="pcode-section">
+                <!-- <div class="pcode-input">
+                    <label>P.Code:</label>
+                    <input type="text" value="ABC-2025-001">
+                </div> -->
+                <button class="upload-btn">Upload Image</button>
+                <div class="image-container">
+                    <div class="no-image">
+                        <i class="fas fa-ban"></i>
+                        <span>NO IMAGE</span>
+                    </div>
+                    <i class="fas fa-paperclip paperclip-icon" id="paperclip-icon"></i>
+                </div>
+            </div>
+
+            <!-- Upload Section Modal -->
+            <div class="modal-overlay" id="upload-modal" style="display: none;">
+                <div class="upload-modal">
+                    <div class="upload-modal-header">
+                        <h3>Upload Section</h3>
+                        <button class="modal-close-btn" id="upload-modal-close">&times;</button>
+                    </div>
+                    <div class="upload-modal-content">
+                        <div class="upload-section">
+                            <div class="upload-column">
+                                <h4>Multi Images</h4>
+                                <div class="file-upload-area">
+                                    <input type="file" id="multi-images-input" multiple accept="image/*" style="display: none;">
+                                    <button class="choose-files-btn" onclick="document.getElementById('multi-images-input').click()">Choose Files</button>
+                                    <span class="file-status">No file chosen</span>
+                                </div>
+                            </div>
+                            <div class="upload-column">
+                                <h4>Documents</h4>
+                                <div class="file-upload-area">
+                                    <input type="file" id="documents-input" multiple accept=".pdf,.doc,.docx,.txt,.xlsx,.xls" style="display: none;">
+                                    <button class="choose-files-btn" onclick="document.getElementById('documents-input').click()">Choose Files</button>
+                                    <span class="file-status">No file chosen</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="upload-modal-footer">
+                            <button class="upload-ok-btn" id="upload-ok-btn">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container/CBM/Loadability Section -->
+            <div class="form-section">
+                <h3 class="section-title">Container/CBM/Loadability</h3>
+                <div class="container-inputs">
+                    <div class="form-group">
+                        <label>Total CFT</label>
+                        <input type="text" value="" disabled style="background-color: rgba(128, 128, 128, 0.24);">
+                    </div>
+                    <div class="container-row">
+                        <i class="fas fa-ship container-icon"></i>
+                        <input type="text" placeholder="Container 1" value="">
+                    </div>
+                    <div class="container-row">
+                        <i class="fas fa-ship container-icon"></i>
+                        <input type="text" placeholder="Container 2" value="">
+                    </div>
+                    <div class="container-row">
+                        <i class="fas fa-ship container-icon"></i>
+                        <input type="text" placeholder="Container 3" value="">
+                    </div>
+                    <div class="form-group">
+                        <label>Remark/Wood Type</label>
+                        <textarea placeholder="Enter remarks or wood type..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="set-details-btn">Set Details</button>
+                <button class="save-btn">Save</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-left">
+            © 2025 ERPDADDY EXPORTS, All rights reserved.
+        </div>
+        <div class="footer-right">
+            Product By ERPDaddy Software Solution
+        </div>
+    </footer>
+
+    <!-- Chief Materials Weights Modal -->
+    <div class="modal-overlay" id="chief-materials-modal" style="display: none;">
+        <div class="modal-container materials-modal">
+            <div class="modal-header">
+                <h3>Chief Materials Weights</h3>
+                <button class="modal-close" id="materials-modal-close">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="materials-table-container">
+                    <table class="materials-weight-table">
+                        <thead>
+                            <tr>
+                                <th>Chief Material Name</th>
+                                <th>Weight</th>
+                                <th>Weight %</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BAMBOO</td>
+                                <td><input type="number" step="0.01" placeholder="0.00"></td>
+                                <td><input type="number" step="0.01" placeholder="0.00" style="background-color: #f5f5f5;" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>BONE</td>
+                                <td><input type="number" step="0.01" placeholder="0.00"></td>
+                                <td><input type="number" step="0.01" placeholder="0.00" style="background-color: #f5f5f5;" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>BRASS</td>
+                                <td><input type="number" step="0.01" placeholder="0.00"></td>
+                                <td><input type="number" step="0.01" placeholder="0.00" style="background-color: #f5f5f5;" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>BRASSAB</td>
+                                <td><input type="number" step="0.01" placeholder="0.00"></td>
+                                <td><input type="number" step="0.01" placeholder="0.00" style="background-color: #f5f5f5;" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>GLASS</td>
+                                <td><input type="number" step="0.01" placeholder="0.00"></td>
+                                <td><input type="number" step="0.01" placeholder="0.00" style="background-color: #f5f5f5;" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Iron</td>
+                                <td><input type="number" step="0.01" placeholder="0.00"></td>
+                                <td><input type="number" step="0.01" placeholder="0.00" style="background-color: #f5f5f5;" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>LEATHER</td>
+                                <td><input type="number" step="0.01" placeholder="0.00"></td>
+                                <td><input type="number" step="0.01" placeholder="0.00" style="background-color: #f5f5f5;" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>MDF</td>
+                                <td><input type="number" step="0.01" placeholder="0.00"></td>
+                                <td><input type="number" step="0.01" placeholder="0.00" style="background-color: #f5f5f5;" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Other</td>
+                                <td><input type="number" step="0.01" placeholder="0.00"></td>
+                                <td><input type="number" step="0.01" placeholder="0.00" style="background-color: #f5f5f5;" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>PLY</td>
+                                <td><input type="number" step="0.01" placeholder="0.00"></td>
+                                <td><input type="number" step="0.01" placeholder="0.00" style="background-color: #f5f5f5;" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>RATTAN</td>
+                                <td><input type="number" step="0.01" placeholder="0.00"></td>
+                                <td><input type="number" step="0.01" placeholder="0.00" style="background-color: #f5f5f5;" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Wood</td>
+                                <td><input type="number" step="0.01" placeholder="0.00"></td>
+                                <td><input type="number" step="0.01" placeholder="0.00" style="background-color: #f5f5f5;" readonly></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="modal-actions">
+                    <button class="ok-btn" id="materials-ok-btn">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Search Modal -->
+    <div class="modal-overlay" id="product-search-modal" style="display: none;">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3>PRODUCT CODE DETAIL</h3>
+                <button class="modal-close" id="product-search-modal-close">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="search-form-grid">
+                    <div class="form-group">
+                        <label>Type</label>
+                        <select>
+                            <option value="">Select Type</option>
+                            <option value="product">Product</option>
+                            <option value="component">Component</option>
+                            <option value="material">Material</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Code</label>
+                        <select>
+                            <option value="">Select Product Code</option>
+                            <option value="PC001">PC001</option>
+                            <option value="PC002">PC002</option>
+                            <option value="PC003">PC003</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Alias Code</label>
+                        <select>
+                            <option value="">Select Alias Code</option>
+                            <option value="AC001">AC001</option>
+                            <option value="AC002">AC002</option>
+                            <option value="AC003">AC003</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Name</label>
+                        <input type="text" placeholder="Enter Product Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select>
+                            <option value="">Select Category</option>
+                            <option value="bath-accessories">BATH ACCESSORIES</option>
+                            <option value="assent-furniture">ASSENT FURNITURE</option>
+                            <option value="bath-furniture">BATH FURNITURE</option>
+                            <option value="bedrooms">BEDROOMS</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Product Type</label>
+                        <select>
+                            <option value="">Select Product Type</option>
+                            <option value="almirah-iron">ALMIRAH IRON</option>
+                            <option value="mirror-frame">MIRROR FRAME</option>
+                            <option value="soap-dispenser">SOAP DISPENSER</option>
+                            <option value="cabinet">CABINET</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="search-button-container">
+                    <button class="search-btn-modal">
+                        <i class="fas fa-search"></i>
+                        Search
+                    </button>
+                </div>
+                
+                <div class="search-results-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Select</th>
+                                <th>Product Name</th>
+                                <th>Product Code</th>
+                                <th>Alias Code</th>
+                                <th>Shape</th>
+                                <th>Image</th>
+                                <th>Product/Sample Code</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="radio" name="product-select"></td>
+                                <td>Sample Product 1</td>
+                                <td>PC001</td>
+                                <td>AC001</td>
+                                <td>Rectangle</td>
+                                <td>-</td>
+                                <td>SP001</td>
+                            </tr>
+                            <tr>
+                                <td><input type="radio" name="product-select"></td>
+                                <td>Sample Product 2</td>
+                                <td>PC002</td>
+                                <td>AC002</td>
+                                <td>Square</td>
+                                <td>-</td>
+                                <td>SP002</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="modal-actions">
+                    <button class="ok-btn" id="product-search-ok-btn">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
